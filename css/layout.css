@@ -1,0 +1,69 @@
+#app {
+	display: grid;
+	grid-template-columns: 32.7% 67.3%;
+
+	height: 100vh;
+	overflow: hidden;
+}
+
+aside {
+	position: relative;
+
+	.bg-wrapper {
+		position: relative;
+		z-index: 0;
+		height: 100vh;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: bottom;
+		}
+	}
+
+	.main-container {
+		max-width: 21rem;
+		top: clamp(2rem, 3vw, 3rem);
+		transform: translateX(-50%);
+		left: 50%;
+		position: absolute;
+		z-index: 3;
+
+		.content {
+			display: grid;
+			gap: 0.25rem;
+
+			h1 {
+				font: var(--logo);
+				color: var(--pink);
+			}
+
+			p {
+				font: var(--body-md);
+				font-weight: 300;
+			}
+		}
+	}
+}
+
+main {
+	overflow: auto;
+	padding-block: 5rem;
+	background-color: var(--shape-body);
+	display: grid;
+	gap: 2.5rem;
+
+	.main-container {
+		max-width: 35rem;
+      width: 100%;
+		margin-inline: auto;
+		display: grid;
+		gap: 2.5rem;
+
+		h1 {
+			font: var(--heading-md);
+			color: var(--text-heading);
+		}
+	}
+}
