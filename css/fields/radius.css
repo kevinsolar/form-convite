@@ -1,0 +1,70 @@
+.radio-wrapper {
+  display: flex;
+  gap: 0.25rem;
+  background-color: var(--input-base);
+  padding: calc(0.25rem - 1px);
+  border-radius: 0.5rem;
+  border: 1px solid var(--input-stroke);
+}
+
+.radio-inner {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+
+  label {
+    position: relative;
+    margin: 0;
+    z-index: 3;
+    cursor: pointer;
+    color: var(--input-placeholder);
+  }
+
+  & input {
+    all: unset;
+    position: absolute;
+    inset: 0;
+
+    &:checked {
+      background-color: var(--shape-hover);
+    }
+  }
+  &:hover,
+  &:focus-within,
+  &:has(:checked) {
+    background-color: var(--shape-hover);
+
+    & .radio-image.building {
+      background-image: url(../../assets/icons/building-hover.svg);
+    }
+    & .radio-image.online {
+      background-image: url(../../assets/icons/video-hover.svg);
+    }
+
+    & label {
+      color: var(--text-heading);
+    }
+  }
+
+  .radio-image {
+    position: relative;
+    z-index: 3;
+    background-size: contain;
+
+    width: 1rem;
+    height: 1rem;
+    &.building {
+      background-image: url(../../assets/icons/building.svg);
+    }
+    &.online {
+      background-image: url(../../assets/icons/video.svg);
+    }
+  }
+}

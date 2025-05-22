@@ -1,25 +1,64 @@
 input,
 select,
 textarea {
-	appearance: none;
-   width: 100%;
-   border-radius: .5rem;
-   background-color: var(--input-base);
-   border: 1px solid var(--input-stroke);
-   padding: 1rem .75rem;
+  appearance: none;
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: var(--input-base);
+  border: 1px solid var(--input-stroke);
+  padding: 0.75rem 1rem;
 
-   font: var(--body-md);
-   color: var(--text-heading);
+  font: var(--body-md);
+  color: var(--text-heading);
 
-   &::placeholder {
-      color: var(--input-placeholder);
-   }
+  &::placeholder {
+    color: var(--input-placeholder);
+  }
 }
 
 label {
-   display: block;
-   margin-bottom: .75rem;
+  display: block;
+  margin-bottom: 0.75rem;
+  font: var(--body-sm);
+  color: var(--text-body);
+}
 
-   font: var(--body-sm);
-   color: var(--text-body)
+.about {
+  grid-template-areas: "a a" "b c" "d e" "f f";
+
+  .title {
+    grid-area: a;
+  }
+  .beginning {
+    grid-area: b;
+  }
+  .ending {
+    grid-area: c;
+  }
+  .description {
+    grid-area: f;
+
+    & textarea {
+      resize: none;
+      height: 8.5rem;
+    }
+  }
+}
+
+[type="date"] {
+  text-transform: uppercase;
+
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--brand-light);
+  &::placeholder {
+    color: var(--text-heading);
+  }
 }
