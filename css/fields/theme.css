@@ -1,0 +1,48 @@
+.theme-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .5rem;
+}
+
+.theme-inner {
+  position: relative;
+  background-color: var(--shape-button);
+  cursor: pointer;
+
+  overflow: hidden;
+  border-radius: 0.5rem;
+  padding-inline: 0.25rem;
+  padding-block: 0.25rem 0.5rem;
+
+  border: 1px solid var(--input-stroke);
+  outline: 1px solid transparent;
+
+  display: grid;
+  gap: 0.5rem;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-heading);
+
+  & input,
+  & input:focus,
+  & input:hover {
+    all: unset;
+    position: absolute;
+    inset: 0;
+  }
+
+  &:hover,
+  &:focus-within,
+  &:has(:checked) {
+    border-color: var(--brand-light);
+    outline-color: var(--brand-light);
+  }
+
+  img {
+    border-radius: 0.25rem;
+  }
+
+  label {
+    margin: 0;
+  }
+}
