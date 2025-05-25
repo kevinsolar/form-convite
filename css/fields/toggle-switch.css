@@ -1,0 +1,73 @@
+.style {
+  width: 176px;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    & label {
+      margin: 0;
+    }
+
+    & label.light {
+      display: none;
+      opacity: 0;
+      transition: all 0.465s ease-in-out;
+    }
+    & label.dark {
+      opacity: 1;
+      transition: all 0.465s ease-in-out;
+    }
+
+    &:has(.toggle-inner input:checked) label.light {
+      display: block;
+      opacity: 1;
+    }
+
+    &:has(.toggle-inner input:checked) label.dark {
+      display: none;
+      opacity: 0;
+    }
+  }
+}
+
+.toggle-inner {
+  position: relative;
+  background-color: var(--input-base);
+  border: 1px solid var(--input-stroke);
+  width: 64px;
+  height: 32px;
+  border-radius: 999px;
+  cursor: pointer;
+
+  & input {
+    all: unset;
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+  }
+
+  .switch {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--input-stroke);
+
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 4px;
+
+    transition: all 0.465s ease-in-out;
+  }
+
+  & input:checked + .switch {
+    left: calc(100% - 28px);
+    background-color: var(--text-heading);
+  }
+
+  &:has(input:checked) {
+    background-color: var(--brand-light);
+  }
+}

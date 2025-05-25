@@ -1,0 +1,32 @@
+.dropzone {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--input-placeholder);
+
+  .box {
+    position: relative;
+    display: flex;
+    background-color: var(--shape-button);
+    padding: 0.25rem 0.75rem;
+    height: 40px;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    color: var(--text-heading);
+
+    cursor: pointer;
+
+    & input {
+      all: unset;
+      opacity: 0;
+      position: absolute;
+      inset: 0;
+    }
+
+    &:has(input:invalid) {
+      background-color: var(--red);
+    }
+  }
+}

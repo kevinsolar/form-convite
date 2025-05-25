@@ -46,7 +46,6 @@
                   id="eventname"
                   name="eventname"
                   placeholder="Nome do Evento"
-                  required
                 />
               </div>
               <div class="input-wrapper beginning">
@@ -56,7 +55,6 @@
                   id="beginning"
                   name="beginning"
                   placeholder="DD/MM/AAAA, --:--"
-                  required
                 />
               </div>
               <div class="input-wrapper ending">
@@ -66,7 +64,6 @@
                   id="ending"
                   name="ending"
                   placeholder="DD/MM/AAAA, --:--"
-                  required
                 />
               </div>
               <div class="input-wrapper typeof">
@@ -103,7 +100,6 @@
                   id="location"
                   name="location"
                   placeholder="Link ou endereço"
-                  required
                 />
               </div>
               <div class="input-wrapper description">
@@ -113,7 +109,6 @@
                   id="description"
                   name="description"
                   placeholder="Escreva sobre os detalhes do evento"
-                  required
                 ></textarea>
               </div>
             </fieldset>
@@ -388,62 +383,112 @@
                 </div>
               </div>
 
-              <div class="input-wrapper style">
-                <label>Estilo</label>
+              <div class="group">
+                <div class="input-wrapper style">
+                  <label>Estilo</label>
 
-                <div class="toggle-inner">
-                  <input type="checkbox" id="style" name="style" />
-                  <div class="switch"></div>
-                </div>
-              </div>
-              <div class="input-wrapper typeof">
-                <label>Tipo</label>
-
-                <div class="radio-wrapper">
-                  <div class="radio-inner">
-                    <div class="radio-image building"></div>
-                    <input
-                      type="radio"
-                      name="type-switch"
-                      value="presencial"
-                      id="presencial"
-                    />
-                    <label for="presencial">Presencial</label>
-                  </div>
-
-                  <div class="radio-inner">
-                    <div class="radio-image online"></div>
-                    <input
-                      type="radio"
-                      name="type-switch"
-                      value="online"
-                      id="online"
-                    />
-                    <label for="online">Online</label>
+                  <div class="wrapper">
+                    <div class="toggle-inner">
+                      <input type="checkbox" id="style-toggle" name="style" />
+                      <div class="switch"></div>
+                    </div>
+                    <label for="style-toggle" class="dark">Escuro</label>
+                    <label for="style-toggle" class="light">Claro</label>
                   </div>
                 </div>
-              </div>
-              <div class="input-wrapper location">
-                <label for="location">Local</label>
-                <input
-                  type="text"
-                  id="location"
-                  name="location"
-                  placeholder="Link ou endereço"
-                  required
-                />
-              </div>
-              <div class="input-wrapper description">
-                <label for="description">Descricao</label>
-                <textarea
-                  type="textarea"
-                  id="description"
-                  name="description"
-                  placeholder="Escreva sobre os detalhes do evento"
-                  required
-                ></textarea>
+
+                <div class="input-wrapper photo">
+                  <label>Foto capa</label>
+
+                  <div class="dropzone">
+                    <div class="box">
+                      <img src="assets/icons/upload.svg" alt="upload" />
+                      <input type="file" id="style" name="style" />
+                      <p>Selecionar</p>
+                    </div>
+                    <p>Nenhum arquivo selecionado</p>
+                  </div>
+                </div>
               </div>
             </fieldset>
+
+            <fieldset class="personal">
+              <legend>
+                <img src="assets/icons/contact.svg" alt="dados" />
+                Dados pessoais
+              </legend>
+
+              <div class="input-wrapper name">
+                <label for="name">Nome</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Nome completo"
+                  required
+                />
+                <div class="error">
+                  <img src="assets/icons/circle-alert.svg" alt="error" />
+                  <span>Campo obrigatório</span>
+                </div>
+              </div>
+
+              <div class="flex gap-1">
+                <div class="input-wrapper email flex-1">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                  />
+                </div>
+
+                <div class="input-wrapper name flex-1">
+                  <label for="name">Telefone</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="(99) 99999-9999"
+                  />
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="grid">
+              <div class="terms-wrapper input-wrapper checkbox-wrapper">
+                <div class="checkbox-image"></div>
+                <input type="checkbox" name="terms" id="terms" />
+                <label for="terms">
+                  Declaro que li e concordo com os
+                  <strong>Termos e Condições</strong> e com a
+                  <strong>Política de Privacidade</strong> da escola Estrela do
+                  Amanhã.
+                </label>
+              </div>
+              <div class="terms-wrapper input-wrapper checkbox-wrapper">
+                <div class="checkbox-image"></div>
+                <input type="checkbox" name="terms-email" id="terms-email" />
+                <label for="terms-email">
+                  Aceito receber atualizações e promoções por e-mail
+                </label>
+              </div>
+              <div class="terms-wrapper input-wrapper checkbox-wrapper">
+                <div class="checkbox-image"></div>
+                <input type="checkbox" name="terms" id="terms" />
+                <label for="terms">
+                  Aceito receber atualizações e promoções por SMS
+                </label>
+              </div>
+            </div>
+
+            <div class="action flex">
+              <button type="submit">
+                <img src="assets/icons/ticket.svg" alt="gerar" />
+                Gerar Convite
+              </button>
+            </div>
           </form>
         </div>
       </main>
