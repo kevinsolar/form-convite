@@ -59,7 +59,7 @@ textarea:focus {
   outline: none;
   border-color: var(--brand-light);
   &::placeholder {
-    color: var(--text-heading);
+    color: var(--text-body);
   }
 }
 
